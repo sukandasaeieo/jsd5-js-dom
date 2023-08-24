@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="enterdata">
+    <h1>Enterdata</h1>
+    <label for="nameInput">Name:</label>
+    <input type="text" id="nameInput" name="name" /><br>
+    <label for="ageInput">Age :</label>
+    <input type="text" id="ageInput" name="age"><br>
+    <label for="weightInput">Weight</label>
+    <input type="text" id="weightInput" name="Weight"><br>
+    <label for="currentInput">Current running(Minutes)</label>
+    <input type="text" id="currentInput" name="Current"><br>
+    <button type="button" onclick="Updatedata()">Add data</button>
+   </div>
+
+   <div class="displaydata">
+    <h1>Entereddata</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Weight</th>
+            <th>Current running(Minutes)</th>
+            <th>Results</th>
+            
+          </tr>
+          <tr>
+            <td id="displayname">kath</td>
+            <td id="displayage">99</td>
+            <td id="displayweight">45</td>
+            <td id="displaycurrent">20</td>
+            <td id="displayresults">Very good</td>
+          </tr>
+    </table>
+
+   </div>
+    <script>
+        const Updatedata = () =>{
+            const nameInput = document.querySelector('#nameInput').value;
+            const displayname = document.querySelector('#displayname');
+            displayname.textContent = nameInput;
+            
+           
+            console.log('name :'+ nameInput);//แสดงค่าใน log
+        }
+
+        
+
+    </script>
+</body>
+</html>
