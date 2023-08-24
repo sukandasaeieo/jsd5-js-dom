@@ -9,7 +9,9 @@
   <body>
     <div style="display: flex; flex-direction: column; padding: 12px">
       <div class="id-card" id="idCard">
-        <div class="photo"></div>
+        <div class="photo">
+          <img id="input_image" src="" alt="image is loading">
+        </div>
         <div class="info">
           <h2 id="name">John Doe</h2>
           <p>Date of Birth: <span id="dob">01/15/1990</span></p>
@@ -64,6 +66,10 @@
         expiration.textContent = expirationInput.value;
         license.textContent = licenseInput.value;
         state.textContent = stateInput.value;
+
+
+        const myimage = document.querySelector("#input_image");
+        image.setAttribute = 
       };
     </script>
   </body>
