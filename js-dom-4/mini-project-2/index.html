@@ -22,7 +22,7 @@
 
    <div class="displaydata">
     <h1>Entereddata</h1>
-    <table>
+    <table id="table_data">
         <tr>
             <th>Name</th>
             <th>Age</th>
@@ -31,24 +31,53 @@
             <th>Results</th>
             
           </tr>
-          <tr>
+          <!-- <tr id="tableinput">
             <td id="displayname">kath</td>
             <td id="displayage">99</td>
             <td id="displayweight">45</td>
             <td id="displaycurrent">20</td>
             <td id="displayresults">Very good</td>
-          </tr>
+          </tr> -->
     </table>
 
    </div>
     <script>
         const Updatedata = () =>{
             const nameInput = document.querySelector('#nameInput').value;
-            const displayname = document.querySelector('#displayname');
-            displayname.textContent = nameInput;
-            
+            const ageInput = document.querySelector('#ageInput').value;
+            const weightInput = document.querySelector('#weightInput').value;
+            const currentInput = document.querySelector('#currentInput').value;
+
+            let currentstatus = ''
+            if(currentInput >=0 && currentInput <= 30){
+                currentstatus = 'good'
+            }
+            else if(currentInput >= 31 && currentInput <= 60){
+                currentstatus = 'balance'
+            }
+            else if(currentInput >= 61){
+                currentstatus = 'extreme'
+            }
+
+            let datatable = document.querySelector('#table_data');
+            datatable.innerHTML += `<tr>
+                <td>${nameInput}</td>
+                <td>${ageInput}</td>
+                <td>${weightInput}</td>
+                <td>${currentInput}</td>
+                <td>${currentstatus}</td>
+                </tr>`
+
+        
+            // let tableinput = document.querySelector('#tableinput').textContent 
+            // console.log('Name :'+ tableinput)
+
            
-            console.log('name :'+ nameInput);//แสดงค่าใน log
+           
+
+
+            // console.log('Name: '+ nameInput);//แสดงค่าใน log
+            
         }
 
         
