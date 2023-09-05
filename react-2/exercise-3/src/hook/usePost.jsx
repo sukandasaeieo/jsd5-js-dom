@@ -68,7 +68,7 @@ const usePost = () => {
      */
     return posts;
   };
-
+  
   const update = (data) => {
     /**
      * Update an existing post in the list.
