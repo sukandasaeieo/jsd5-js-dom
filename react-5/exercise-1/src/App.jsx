@@ -6,14 +6,25 @@ import "./App.css";
 const App = () => {
   const [members, setMembers] = useState([]);
 
-  const [singleMember, setSingleMember] = useState([]);
+  const [singleMember, setSingleMember] = useState({});
 
   useEffect(() => {
+<<<<<<< HEAD
     const getData ______fill the blank here_______ {
       const response = await axios(
       );
       // set member here 
 
+=======
+    const getData = async () => {
+      const response = await axios.get(
+        "https://jsd5-mock-backend.onrender.com/members"
+      );
+      // set member here
+      if (response.status === 200 && response.data) {
+        setMembers([...response.data]);
+      }
+>>>>>>> 72f528faa82e8fb1e7eb0a823c3235ca7d03c108
     };
 
     getData();
@@ -21,9 +32,14 @@ const App = () => {
 
   const getDataById = async (id) => {
     // call axios here
+    const response = await axios.get(
+      `https://jsd5-mock-backend.onrender.com/members/${id}`
+    );
 
     if (response.status === 200 && response.data) {
       // set data here
+      const { data } = response;
+      setSingleMember({ ...data });
     }
   };
 
@@ -31,7 +47,6 @@ const App = () => {
     <div className="container">
       <h1>All Data</h1>
       <div>
-        
         {members.map((member) => (
           <Card
             age={member.age}
